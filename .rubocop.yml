@@ -1,0 +1,76 @@
+require:
+  - rubocop
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  # Your Rails version
+  TargetRailsVersion: 6.0.2.3
+  # Your Ruby version
+  TargetRubyVersion: 2.7.1
+  DisplayCopNames: true
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - db/seeds.rb
+    - db/**/*
+    - config/**/*
+    - tmp/**/*
+    - node_modules/**/*
+    - test/**/*
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 23
+
+Metrics/BlockLength:
+  Exclude:
+    - Guardfile
+    - config/**/*
+    - lib/tasks/*.rake
+    - spec/**/*
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Layout/LineLength:
+  Max: 120
+
+RSpec/MultipleExpectations:
+  Max: 40
+
+RSpec/NestedGroups:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 40
+
+RSpec/EmptyExampleGroup:
+  CustomIncludeMethods:
+    - example_request
+
+RSpec/LetSetup:
+  Enabled: false

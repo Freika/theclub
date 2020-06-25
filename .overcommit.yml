@@ -1,0 +1,22 @@
+CommitMsg:
+  EmptyMessage:
+    enabled: true
+  MessageFormat:
+    enabled: false
+    pattern: \[NB-\d{1,}\]:\s[A-Z].+
+    expected_pattern_message: '[NB-<ticket number>]: <commit message>'
+    sample_message: '[NB-8520]: Add "age" field to "applications" table'
+
+PreCommit:
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop']
+    on_warn: fail
+  Brakeman:
+    enabled: true
+    command: ['bundle', 'exec', 'brakeman']
+
+PrePush:
+  RSpec:
+    enabled: true
+    command: ['bundle', 'exec', 'rspec', 'spec/']
