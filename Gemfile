@@ -16,6 +16,10 @@ gem 'webpacker'
 gem 'devise'
 gem 'pundit'
 
+gem 'audited'
+gem 'paranoia'
+gem 'strong_migrations'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'overcommit', require: false
