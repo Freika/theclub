@@ -10,6 +10,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '6.0.3.2'
 gem 'sassc'
+gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker'
 
@@ -19,6 +20,8 @@ gem 'pundit'
 gem 'audited'
 gem 'paranoia'
 gem 'strong_migrations'
+
+gem 'omniauth-telegram'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
