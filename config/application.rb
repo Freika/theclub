@@ -21,6 +21,9 @@ module Theclub
   class Application < Rails::Application
     config.load_defaults 6.0
     config.generators.system_tests = nil
+    config.hosts << "929b9d27a890.ngrok.io"
+    config.available_locales = :ru
+    config.i18n.default_locale = :ru
 
     config.generators do |g|
       g.test_framework :rspec, fixture_replacement: :factory_bot
@@ -32,7 +35,5 @@ module Theclub
       g.routing_specs false
       g.factory_bot false
     end
-
-    config.i18n.default_locale = :ru
   end
 end

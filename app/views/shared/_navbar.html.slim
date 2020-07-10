@@ -1,0 +1,27 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to 'TheClub', root_path, class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+    ul.navbar-nav.float-right
+      - if current_user
+        li.nav-item
+          / = link_to my_gifts_path, class: 'nav-link' do
+          /   => t('my_gifts')
+          /   i.fas.fa-gifts
+        li.nav-item
+          = link_to edit_user_registration_path, class: 'nav-link' do
+            | Edit
+        li.nav-item
+          = link_to destroy_user_session_path, class: 'nav-link', method: 'delete' do
+            | Sign out
+      - else
+        li.nav-item
+          = link_to new_user_session_path, class: 'nav-link' do
+            => t('sign_in')
+            i.fas.fa-sign-in-alt
+        li.nav-item
+          = link_to new_user_registration_path, class: 'nav-link' do
+            => t('sign_up')
+            i.fas.fa-user-plus
