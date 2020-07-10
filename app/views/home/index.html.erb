@@ -1,7 +1,0 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<% if current_user %>
-  <h1>Hello, <%= current_user.username %>!</h1>
-<% else %>
-  <%= link_to 'Sign in with Telegram', user_telegram_omniauth_authorize_path %>
-<% end %>
