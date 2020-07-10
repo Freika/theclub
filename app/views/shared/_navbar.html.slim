@@ -4,22 +4,18 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      - if user_signed_in?
-        li.nav-item
-          / = link_to t('new_gift'), new_gift_path, class: 'nav-link'
-        / li.nav-item
     ul.navbar-nav.float-right
-      - if user_signed_in?
+      - if current_user
         li.nav-item
           / = link_to my_gifts_path, class: 'nav-link' do
           /   => t('my_gifts')
           /   i.fas.fa-gifts
         li.nav-item
           = link_to edit_user_registration_path, class: 'nav-link' do
-            i.fas.fa-user
+            | Edit
         li.nav-item
           = link_to destroy_user_session_path, class: 'nav-link', method: 'delete' do
-            i.fas.fa-sign-out-alt
+            | Sign out
       - else
         li.nav-item
           = link_to new_user_session_path, class: 'nav-link' do

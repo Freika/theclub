@@ -13,4 +13,13 @@ class User < ApplicationRecord
       user.avatar   = auth.info.image
     end
   end
+
+  # These are required to auth w/out email
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end
